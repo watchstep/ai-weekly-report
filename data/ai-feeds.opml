@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Weekly AI Feeds (Official / Community / Papers-Books)</title>
+  </head>
+  <body>
+
+    <outline text="Official">
+      <outline text="OpenAI Blog" type="rss" xmlUrl="https://openai.com/news/rss.xml" htmlUrl="https://openai.com/blog"/>
+      <outline text="Google DeepMind Blog" type="rss" xmlUrl="https://deepmind.google/blog/rss.xml" htmlUrl="https://deepmind.google/blog"/>
+      <outline text="Google AI Blog" type="rss" xmlUrl="http://googleaiblog.blogspot.com/atom.xml" htmlUrl="https://ai.googleblog.com/"/>
+      <outline text="Anthropic Engineering (RSSHub)" type="rss" xmlUrl="https://rsshub.app/anthropic/engineering" htmlUrl="https://www.anthropic.com/engineering"/>
+      <outline text="Meta AI (rss.app)" type="rss" xmlUrl="https://rss.app/feeds/jrGbuKHQuFE33AG2.xml" htmlUrl="https://ai.meta.com/blog/"/>
+      <outline text="Microsoft Research" type="rss" xmlUrl="https://www.microsoft.com/en-us/research/feed/" htmlUrl="https://www.microsoft.com/en-us/research/"/>
+      <outline text="NVIDIA Blog" type="rss" xmlUrl="https://blogs.nvidia.com/feed/" htmlUrl="https://blogs.nvidia.com/"/>
+      <outline text="AWS Official Blog (KR)" type="rss" xmlUrl="https://aws.amazon.com/ko/blogs/aws/feed/" htmlUrl="https://aws.amazon.com/ko/blogs/aws/"/>
+      <outline text="Hugging Face Blog" type="rss" xmlUrl="https://huggingface.co/blog/feed.xml" htmlUrl="https://huggingface.co/blog"/>
+      <outline text="LangChain Blog (Official)" type="rss" xmlUrl="https://blog.langchain.dev/rss/" htmlUrl="https://blog.langchain.dev/"/>
+      <outline text="TensorFlow Blog" type="rss" xmlUrl="https://blog.tensorflow.org/feeds/posts/default?alt=rss" htmlUrl="https://blog.tensorflow.org/"/>
+      <outline text="ML@CMU (Carnegie Mellon) — Machine Learning Blog" type="rss" xmlUrl="https://blog.ml.cmu.edu/feed" htmlUrl="https://blog.ml.cmu.edu/"/>
+      <outline text="Stanford AI Blog" type="rss" xmlUrl="https://ai.stanford.edu/blog/feed.xml" htmlUrl="https://ai.stanford.edu/blog/"/>
+      <outline text="MIT News - AI" type="rss" xmlUrl="https://news.mit.edu/rss/topic/artificial-intelligence2" htmlUrl="https://news.mit.edu/topic/artificial-intelligence2"/>
+      <outline text="Berkeley BAIR Blog" type="rss" xmlUrl="https://bair.berkeley.edu/blog/feed.xml" htmlUrl="https://bair.berkeley.edu/blog/"/>
+      <outline text="AI2 (Allen Institute) Blog" type="rss" xmlUrl="https://allenai.org/blog/feed" htmlUrl="https://allenai.org/blog"/>
+    </outline>
+
+    <outline text="Community">
+      <outline text="GeekNews (KR)" type="rss" xmlUrl="https://feeds.feedburner.com/geeknews-feed" htmlUrl="https://news.hada.io/"/>
+      <outline text="PyTorch KR - News" type="rss" xmlUrl="https://discuss.pytorch.kr/c/news/14.rss" htmlUrl="https://discuss.pytorch.kr/c/news/14"/>
+      <outline text="AI Matters (KR)" type="rss" xmlUrl="https://aimatters.co.kr/category/news-report/ai-news/feed" htmlUrl="https://aimatters.co.kr/category/news-report/ai-news/"/>
+      <outline text="Superhuman AI (kill-the-newsletter)" type="rss" xmlUrl="https://kill-the-newsletter.com/feeds/2jrxmnhvpa0owm4km8ry.xml" htmlUrl="https://kill-the-newsletter.com/"/>
+      <outline text="VentureBeat — AI" type="rss" xmlUrl="https://venturebeat.com/category/ai/feed/" htmlUrl="https://venturebeat.com/category/ai/"/>
+      <outline text="The Gradient" type="rss" xmlUrl="https://thegradient.pub/rss/" htmlUrl="https://thegradient.pub/"/>
+      <outline text="InfoQ — AI/ML/Data Eng" type="rss" xmlUrl="https://feed.infoq.com/ai-ml-data-eng/" htmlUrl="https://www.infoq.com/ai-ml-data-eng/"/>
+      <outline text="IEEE Spectrum — AI" type="rss" xmlUrl="https://spectrum.ieee.org/feeds/topic/artificial-intelligence.rss" htmlUrl="https://spectrum.ieee.org/ai"/>
+      <outline text="MarkTechPost" type="rss" xmlUrl="https://www.marktechpost.com/feed" htmlUrl="https://www.marktechpost.com/"/>
+      <outline text="Synced Review" type="rss" xmlUrl="https://syncedreview.com/feed" htmlUrl="https://syncedreview.com/"/>
+      <outline text="KDnuggets" type="rss" xmlUrl="https://www.kdnuggets.com/feed" htmlUrl="https://www.kdnuggets.com/"/>
+      <outline text="SemiAnalysis" type="rss" xmlUrl="https://www.semianalysis.com/feed" htmlUrl="https://www.semianalysis.com/"/>
+      <outline text="Latent Space" type="rss" xmlUrl="https://www.latent.space/feed" htmlUrl="https://www.latent.space/"/>
+      <outline text="Last Week in AI" type="rss" xmlUrl="https://lastweekin.ai/feed" htmlUrl="https://lastweekin.ai/"/>
+      <outline text="THE DECODER" type="rss" xmlUrl="https://the-decoder.com/feed" htmlUrl="https://the-decoder.com/"/>
+      <outline text="AIModels.fyi" type="rss" xmlUrl="https://aimodels.substack.com/feed" htmlUrl="https://aimodels.substack.com/"/>
+      <outline text="Reddit — r/MachineLearning" type="rss" xmlUrl="https://www.reddit.com/r/MachineLearning/.rss" htmlUrl="https://www.reddit.com/r/MachineLearning/"/>
+      <outline text="Reddit — r/artificial" type="rss" xmlUrl="https://www.reddit.com/r/artificial/.rss" htmlUrl="https://www.reddit.com/r/artificial/"/>
+      <outline text="Reddit — r/deeplearning" type="rss" xmlUrl="https://www.reddit.com/r/deeplearning/.rss" htmlUrl="https://www.reddit.com/r/deeplearning/"/>
+    </outline>
+
+    <outline text="Papers / Books">
+      <outline text="O’Reilly Radar - AI/ML" type="rss" xmlUrl="https://www.oreilly.com/radar/topics/ai-ml/feed/" htmlUrl="https://www.oreilly.com/radar/topics/ai-ml/"/>
+      <outline text="arXiv — cs.AI" type="rss" xmlUrl="https://rss.arxiv.org/rss/cs.AI" htmlUrl="https://arxiv.org/list/cs.AI/recent"/>
+    </outline>
+
+  </body>
+</opml>

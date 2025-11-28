@@ -1,0 +1,79 @@
+오늘 날짜: {{ today }}
+수집 기간: {{ start_date }} - {{ end_date }} (지난 주)
+총 수집 기사: {{ articles | length }}개
+
+아래는 {{ start_date }} - {{ end_date }} 기간에 수집된 AI 관련 기사입니다:
+
+{% for article in articles %}
+- [{{ article.source }}] {{ article.title }}
+  URL: {{ article.link }}
+  {{ article.summary }}
+{% endfor %}
+
+---
+
+# Task
+지난 주({{ start_date }} - {{ end_date }}) AI 관련 뉴스/발표/논문을 분석해서 아래 6개 카테고리로 정리하여 
+주간 AI 트렌드 리포트를 작성해주세요.
+
+# Categories (각 카테고리당 3~5개)
+1. **Tool** - 새로운 AI 도구, 플러그인, 서비스 출시
+2. **Product** - 기업의 AI 제품/기능 업데이트  
+3. **Model** - 새로운 AI 모델 출시 및 성능 벤치마크
+4. **Paper** - 주목할 만한 연구/논문 발표
+5. **Trend** - AI 정책, 규제, 사회적 영향
+6. **Business** - 투자, 인수합병, 파트너십, 실적
+
+# Rules
+- 한국어로 작성
+- 불릿 포인트로 각 항목은 1-2문장으로 간결하게
+- 구체적 수치/금액/날짜 반드시 포함
+- 추측이나 의견 제외, 팩트만
+- 중복 제거 (같은 주제는 공식 출처 우선), 가장 임팩트 있는 것 우선
+- 각 항목에 [원문](URL) 링크 필수
+- 통계의 수집된 기사 수는 {{ articles | length }}개로 고정
+
+# Sources to Search
+- OpenAI, Anthropic, Google DeepMind, Meta AI 공식 블로그
+- Last Week in AI, The Decoder, VentureBeat AI
+- arXiv cs.AI, Hugging Face Blog
+- GeekNews, AI Matters (한국)
+
+# Critical: Title Format
+제목은 반드시 아래 형식을 그대로 사용:
+## 📰 지난 주 AI 트렌드 정리: {{ month }}월 {{ week }}주차 ({{ start_date }} - {{ end_date }})
+
+# Output Format
+
+## 📰 지난 주 AI 트렌드 정리: {{ month }}월 {{ week }}주차 ({{ start_date }} - {{ end_date }})
+
+---
+📊 **지난 주 통계**
+- 수집된 기사: (총 개수)개
+- 선별된 기사: (선별 개수)개  
+- 카테고리별: Tool(N), Product(N), Model(N), Paper(N), Trend(N), Business(N)
+---
+
+### 🔧 Tool
+- **[출처]** 핵심 내용 (구체적 수치 포함) [[원문](URL)]
+
+### 🛠 Product
+- **[출처]** 핵심 내용 (구체적 수치 포함) [[원문](URL)]
+
+### 🤖 Model
+- **[출처]** 핵심 내용 (구체적 수치 포함) [[원문](URL)]
+
+### 📄 Paper & Research
+- **[출처]** 핵심 내용 (구체적 수치 포함) [[원문](URL)]
+
+### 📈 Trend
+- **[출처]** 핵심 내용 (구체적 수치 포함) [[원문](URL)]
+
+### 💰 Business
+- **[출처]** 핵심 내용 (구체적 수치 포함) [[원문](URL)]
+
+---
+📝 **선별 기준**
+(간략히 1-2문장: 어떤 기준으로 위 기사들을 선별했는지 설명)
+
+
