@@ -24,7 +24,7 @@ jobs:
       - name: Run report generator
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}ㅁ
+          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: python main.py
       

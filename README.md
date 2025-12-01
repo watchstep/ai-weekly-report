@@ -47,26 +47,6 @@ ai-weekly-report/
         └── weekly-report.yml
 ```
 
-## ⚙️ Setup
-
-### .env File
-
-```env
-GOOGLE_API_KEY=your_gemini_api_key_here
-TEAMS_WEBHOOK_URL=https://outlook.office.com/webhook/...
-SLACK_WEBHOOK_URL=https://hooks.slack.com/services/...
-```
-
-### requirements.txt
-
-```
-google-genai>=1.52.0
-python-dotenv>=1.0.0
-feedparser>=6.0.0
-jinja2>=3.1.0
-requests>=2.31.0
-```
-
 ## 🚀 Usage
 
 ### 1. Fork/Clone Repository
@@ -76,15 +56,17 @@ git clone https://github.com/your-username/ai-weekly-report.git
 cd ai-weekly-report
 ```
 
-### 2. Add GitHub Secrets
+### 2. Register GitHub Secrets (Required)
 
-Go to Settings → Secrets and variables → Actions:
+Go to **Settings → Secrets and variables → Actions → New repository secret**
 
-| Secret Name | Value |
-|-------------|-------|
-| `GOOGLE_API_KEY` | Gemini API Key |
-| `TEAMS_WEBHOOK_URL` | Teams Webhook URL |
-| `SLACK_WEBHOOK_URL` | Slack Webhook URL (optional) |
+| Name | Value |
+|------|-------|
+| `GOOGLE_API_KEY` | Your Gemini API Key |
+| `TEAMS_WEBHOOK_URL` | Your Teams Webhook URL |
+| `SLACK_WEBHOOK_URL` | Your Slack Webhook URL (optional) |
+
+> ⚠️ **Do NOT push `.env` file.** Use GitHub Secrets for security.
 
 ### 3. Enable Workflow
 
