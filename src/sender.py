@@ -1,8 +1,36 @@
 """Send Report to Teams/Slack"""
 
+import time
 import requests
 
 from config.settings import TEAMS_WEBHOOK_URL, SLACK_WEBHOOK_URL
+
+
+"""Send Report to Teams/Slack"""
+
+import time
+import requests
+
+from config.settings import TEAMS_WEBHOOK_URL, SLACK_WEBHOOK_URL
+
+
+def _format_report_for_teams(report: str) -> str:
+    """Teams Adaptive Card에서 잘 보이도록 간단 전처리"""
+    text = report
+
+    # [[원문](url)] 같은 패턴을 [원문](url) 로 정리
+    text = text.replace("[[원문]", "[원문]")
+    text = text.replace("[[원문 ", "[원문 ")
+
+    # 필요하면 여기서 추가 치환 가능
+    return text
+
+
+def _chunk_text(text: str, chunk_size: int = 4000) -> list[str]:
+    """길이를 제한하지 않고. 카드 안에서만 잘게 나눠 여러 TextBlock으로 넣기"""
+    if not text:
+        return [""]
+    return [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
 
 
 def send_to_teams(report: str) -> bool:
@@ -10,14 +38,24 @@ def send_to_teams(report: str) -> bool:
     if not TEAMS_WEBHOOK_URL:
         print("⚠️ TEAMS_WEBHOOK_URL 미설정")
         return False
-    
-    # 리포트를 여러 섹션으로 분할 (4000자 제한)
-    max_length = 3500
-    report_text = report[:max_length]
-    if len(report) > max_length:
-        report_text += "\n\n... (전체 리포트는 GitHub Artifacts 참조)"
-    
-    # Adaptive Card 형식 (Power Automate 호환)
+
+    # 전체 리포트를 전처리하고. 카드 안에서만 여러 블록으로 나눔. 잘라서 버리지는 않음
+    processed = _format_report_for_teams(report)
+    chunks = _chunk_text(processed, chunk_size=4000)
+
+    # 카드 본문 구성.
+    body_blocks = []
+
+    for i, chunk in enumerate(chunks):
+        body_blocks.append(
+            {
+                "type": "TextBlock",
+                "wrap": True,
+                "spacing": "Medium" if i == 0 else "Small",
+                "text": chunk,
+            }
+        )
+
     card = {
         "type": "message",
         "attachments": [
@@ -26,46 +64,39 @@ def send_to_teams(report: str) -> bool:
                 "content": {
                     "type": "AdaptiveCard",
                     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-                    "version": "1.2",
-                    "body": [
-                        {
-                            "type": "TextBlock",
-                            "size": "Medium",
-                            "weight": "Bolder",
-                            "text": "📰 AI Weekly Report"
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": report_text,
-                            "wrap": True,
-                            "spacing": "Medium"
-                        }
-                    ]
-                }
+                    "version": "1.4",
+                    "body": body_blocks,
+                },
             }
-        ]
+        ],
     }
-    
+
     try:
+        print("📡 HTTP 요청 전송 중...")
         response = requests.post(
             TEAMS_WEBHOOK_URL,
             json=card,
-            headers={'Content-Type': 'application/json'},
-            timeout=30
+            headers={"Content-Type": "application/json"},
+            timeout=30,
         )
-        
-        # Power Automate는 200 또는 202 반환
+
+        print(f"📡 HTTP 상태 코드: {response.status_code}")
+        print(f"📡 응답 본문: {response.text}")
+
         if response.status_code in [200, 202]:
             print("✅ Teams 발송 완료")
             return True
         else:
             print(f"❌ Teams 발송 실패: {response.status_code}")
-            print(f"응답: {response.text}")
             return False
-            
+
     except Exception as e:
         print(f"❌ Teams 발송 실패: {e}")
+        import traceback
+
+        traceback.print_exc()
         return False
+
 
 
 def send_to_slack(report: str) -> bool:
