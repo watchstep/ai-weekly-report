@@ -51,5 +51,10 @@
       <outline text="arXiv — cs.AI" type="rss" xmlUrl="https://rss.arxiv.org/rss/cs.AI" htmlUrl="https://arxiv.org/list/cs.AI/recent"/>
     </outline>
 
+    <!-- Manual/web-search watchlist only. No xmlUrl: feedparser must skip these. -->
+    <outline text="Social / Manual Monitoring (not RSS)">
+      <outline text="Threads @choi.openai (AI news curator, independently verify claims)" htmlUrl="https://www.threads.com/@choi.openai" />
+    </outline>
+
   </body>
 </opml>
